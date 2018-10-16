@@ -1,18 +1,23 @@
+<!--{% extends 'forms_app/base.html' %}-->
+
 {# Testing here #}
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'forms_app/bootstrap.css' %}">
 <div class="jumbotron">
-	<p>This is the forms app</p>
+    <p>Non Profit Forms Application</p>
 </div>
 {% if form_list %}
 <ul>
-	{% for eachItem in form_list %}
-	<li>{{ eachItem.name }} with key:{{eachItem.pk}}
-		<a href="{% url 'edit' pk=eachItem.pk %}">Edit</a></li>
-	{% endfor %}
+    {% for eachItem in form_list %}
+    <li>{{ eachItem.name }} with key:{{eachItem.pk}}
+        <a href="{% url 'edit' pk=eachItem.pk %}">Edit</a></li>
+    {% endfor %}
 </ul>
 {% else %}
 <p>Nothing available.</p>
 {% endif %}
+
+
 <script src="{% static 'forms_app/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'forms_app/bootstrap.js' %}"></script>
