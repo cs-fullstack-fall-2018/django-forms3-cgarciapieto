@@ -1,0 +1,7 @@
+{% extends 'forms_app/index.html' %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
